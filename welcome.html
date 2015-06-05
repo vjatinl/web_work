@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta name="" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" media="screen" />
+
+<script src="jquery-1.11.2.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="bootbox.js"></script>
+
+<script>
+
+	$(document).ready(function(){	
+ 		$('#boot_alert').click(function(){
+ 		bootbox.alert("Hello world!"); 
+ 		});
+ 		
+ 		
+ 		$('#boot_confirm').click(function(){
+ 		bootbox.confirm("Are you sure?", function(result){ 			
+ 			$('#result_confirm').html(result);
+ 		}); 
+		});
+
+		$('#boot_prompt').click(function(){
+ 		bootbox.prompt("What is your name?", function(result){ 			
+ 			$('#result_prompt').html(result);
+ 		}); 
+		});
+		
+		$('#boot_dialog').click(function(){
+		bootbox.dialog({
+		  title: "That html",
+		  message: '<h2> Demonstrates HTML content </h2> <br/> You can also use <b>html</b>',
+		  buttons:{
+		  	success:{
+		  		label:"sava",
+		  		className:"btn-success",
+		  		callback : function(){		  			 
+		  			alert('good morning');
+		  		}		  		
+		  	}		  		
+		  }
+		});
+		});			
+ 	});
+ </script>
+</head>
+<body>
+	<h1>BOOTBOX POPUPS </h1>
+
+	<input  type="button" name="boot_alert" id="boot_alert" value="Bootbox Alert !!" class="btn btn-success"/>
+	
+	<br><br>
+	
+	<input  type="button" name="boot_confirm" id="boot_confirm" value="Bootbox Confirm  Box !!" class="btn btn-success"/>
+	<p id="result_confirm"></p>
+	<br><br>
+	
+	<input  type="button" name="boot_prompt" id="boot_prompt" value="Bootbox Prompt  Box !!" class="btn btn-success"/>
+	<p id="result_prompt"></p>
+	<br><br>
+	
+	<input  type="button" name="boot_dialog" id="boot_dialog" value="Bootbox Dialog Box !!" class="btn btn-success"/>
+	<p id="result_dialog"></p>
+	<br><br>
+	
+</body>
+</html>
